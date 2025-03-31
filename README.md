@@ -34,8 +34,15 @@ Below is the BibTex for citing this snapshot of the repository.
 
 ## Description
 
-This software provides the implementation of various pricing strategies for solving the **Set-Union Bin Packing Problem (SUBP)**. 
-The implemented pricing methods are intended to be integrated into a branch-and-price framework (or a comparable method) to solve the SUBP.
+This repository provides part of the implementation of our branch-and-price algorithm for solving the **Set-Union Bin Packing Problem (SUBP)**.
+More precisely, it provides all problem-specific parts of our algorithm - most notably various algorithms for solving the column-generation pricing problem.
+It does **not** provide the general branch-and-price infrastructure, because we do not have the full rights to share this part of the software.
+
+### Code Usage
+
+The provided code is not intended to be used standalone, but to be integrated into a general branch-and-price framework (or a comparable method).
+To this end, the pricing solver class provides three main functions to (i) solve a specific pricing problem (`Pricing`), (ii) update the pricer according to new dual prices (`UpdateDuals`), and (iii) update the pricer according to the current branching constraints (`UpdateBranchingConstraints`).
+
 
 ## Code Overview
 
