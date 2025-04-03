@@ -38,6 +38,9 @@ This repository provides part of the implementation of our branch-and-price algo
 More precisely, it provides all problem-specific parts of our algorithm - most notably various algorithms for solving the column-generation pricing problem.
 It does **not** provide the general branch-and-price infrastructure, because we do not have the full rights to share this part of the software.
 
+For this project, we integrated our code with a branch-and-price framework jointly developed and maintained by several research groups. 
+Because this code is not open source, we are unable to make the full standalone codebase public.
+
 ### Code Usage
 
 The provided code is not intended to be used standalone, but to be integrated into a general branch-and-price framework (or a comparable method).
