@@ -61,9 +61,9 @@ The source files and their functionalities are listed below (alphabetically):
 | `subp_instance.h/.cpp` | Parser and data structures for reading instance data. |
 | `subp_pricing_solver.h/.cpp` | Pricing problem solver, consisting of:<br> - pricing variant selector (`Pricing`), <br> - branching constraint handler (`UpdateBranchingConstraints`), and <br> - dual price updater (`UpdateDuals`). |
 | `subp_pricingMIP.h/.cpp` | Mixed-Integer Programming (MIP) formulation for the pricing problem. |
-| `subp_relaxSUKP.cpp/.h` | Implementation of a completion bound based on a relaxed SUKP formulation (denoted as \$B_4\$ in the paper). |
+| `subp_relaxSUKP.h/.cpp` | Implementation of a completion bound based on a relaxed SUKP formulation (denoted as \$B_4\$ in the paper). |
 | `subp_settings.h` | Configuration file for specifying problem-related settings. |
-| `subp_spprc_labeling.cpp/.h` | Labeling algorithm for solving the pricing problem. |
+| `subp_spprc_labeling.h/.cpp` | Labeling algorithm for solving the pricing problem. |
 
 ### Auxiliary Files
 
@@ -85,6 +85,29 @@ The computational study focuses on two benchmark sets:
 2. **General-weight instances**: Large-scale instances derived from the SUKP benchmark by He et al. (2018), referred to as *general*.
 
 All benchmark instances are included in the `data` folder.
+
+
+## Computational Results
+
+The results of our computational study are provided in the `results` folder.
+
+#### General Benchmark
+
+For each instance, the following information is reported in the file `detailedResults_general.csv`:
+
+- `ourBKS`: The best known solution value obtained by our algorithm.
+- `treeLB`: The best lower bound found during the search tree exploration.
+- `time_seconds`: The total computation time in seconds.
+- `numNodesSolved`: The number of nodes explored in the branch-and-bound tree.
+- `non-IRUP`: Indicator for integer round-up property (1 if the instance does *not* satisfy the IRUP, 0 if it does, left blank if not yet proven).
+
+#### Pagination Benchmark
+
+The file `detailedResults_pagination.csv` contains the same columns as listed above for the general benchmark. In addition, it includes the following:
+
+- `totalBKS`: The best known solution value aggregated across all methods.
+- `GrangeBKS`: The best known solution value reported by Grange et al. (2018).
+
 
 ## References
 
